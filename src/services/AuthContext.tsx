@@ -28,6 +28,8 @@ interface AuthContextType {
   setWeb3auth: React.Dispatch<React.SetStateAction<Web3Auth | null>>;
   web3AuthInit: () => void;
   showDalBalance: () => void;
+  showItemBalance: () => void;
+  getPrivateKey: () => void;
 
   duzzleLogin: (params: LoginRequest) => void;
   user: DuzzleUser | null;
@@ -144,6 +146,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  const showItemBalance = async () => {
+    if (!web3auth?.provider) {
+      console.log("provider not initialized yet");
+    } else {
+      const rpc = new RPC(web3auth.provider as IProvider);
+      const balance = await rpc.getNfts();
+      UiConsole(balance);
+    }
+  };
+
+  const getPrivateKey = async () => {
+    if (!web3auth?.provider) {
+      UiConsole("provider not initialized yet");
+      return;
+    }
+    const rpc = new RPC(web3auth.provider as IProvider);
+    const privateKey = await rpc.getPrivateKey();
+    UiConsole(privateKey);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -158,6 +180,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         web3AuthInit,
         user,
         showDalBalance,
+        showItemBalance,
+        getPrivateKey,
       }}
     >
       {children}

@@ -1,7 +1,8 @@
 import { useAuth } from "../../../services/AuthContext";
 
 export function LoggedInView() {
-  const { user, logout, showDalBalance } = useAuth();
+  const { user, logout, showDalBalance, showItemBalance, getPrivateKey } =
+    useAuth();
 
   return (
     <>
@@ -19,6 +20,8 @@ export function LoggedInView() {
               <td>이름</td>
               <td>지갑 주소</td>
               <td>보유 DAL 확인</td>
+              <td>보유 아이템</td>
+              <td>Get Private Key</td>
             </tr>
             <tr>
               <td>{user?.email}</td>
@@ -27,6 +30,16 @@ export function LoggedInView() {
               <td>
                 <button onClick={showDalBalance} className="card">
                   Get Dal Balance
+                </button>
+              </td>
+              <td>
+                <button onClick={showItemBalance} className="card">
+                  Get Item Balance
+                </button>
+              </td>
+              <td>
+                <button onClick={getPrivateKey} className="card">
+                  Get Private Key
                 </button>
               </td>
             </tr>

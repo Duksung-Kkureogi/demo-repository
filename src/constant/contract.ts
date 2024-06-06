@@ -10,6 +10,18 @@ export class ContractAddress {
   static get BlueprintItem(): string {
     return "0xa07b3f7F489013558F56b77a17a664421fefc5Df";
   }
+
+  static get PuzzlePiece(): string {
+    return "0x045d0DC070AdfBA50250Ef1266d720A5879359e7";
+  }
+
+  static get RedBrick(): string {
+    return "0xe1742Ae373B9383b06e3481Ad55De8615BB0B1d0";
+  }
+
+  static get Sand(): string {
+    return "0x0560acc5798C58857a40e6d07f17C766e676Ee76";
+  }
 }
 
 export enum EventTopic {

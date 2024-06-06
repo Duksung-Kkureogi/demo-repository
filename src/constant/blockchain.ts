@@ -15,7 +15,8 @@ export const Web3AuthParameters: {
   modalConfig: Record<string, ModalConfig>;
 } = {
   clientId:
-    "BPi5PB_UiIZ-cPz1GtV5i1I2iOSOHuimiXBI0e-Oe_u6X3oVAbCiAZOTEBtTXw4tsluTITPqA8zMsfxIKMjiqNQ",
+    "BPbO-LorL6VnxrYGqX9WrY23EIN1cEEz9qR1Ir4npgxR8Yik9WfXh8_ic8o7en7yN7usdzHNYb8fEQxokEUzI_E",
+    
 
   chainConfig: {
     chainId: "0x13882",

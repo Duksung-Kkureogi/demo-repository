@@ -24,6 +24,7 @@ function StorePage() {
         setMetadataFunc(itemMetadataUrl);
         // UiConsole(itemMetadataUrl);
       } catch (error) {
+        console.error(error);
         UiConsole("구매 실패");
       } finally {
         setLoading(false);
