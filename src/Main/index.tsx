@@ -7,6 +7,10 @@ import MainPage from "../Presentation/UI/Pages/MainPage";
 import LoginPage from "../Presentation/UI/Pages/LoginPage";
 import StorePage from "../Presentation/UI/Pages/StorePage";
 import { AuthProvider } from "../services/AuthContext";
+import WebSocketTestPage from "../Presentation/UI/Pages/WebSocketTestPage";
+import AcidPage from "../Presentation/UI/Pages/AcidPage";
+import AuthGuardLayout from "../Presentation/UI/Components/AuthGuard";
+import QuestStartPage from "../Presentation/UI/Pages/QuestStartPage";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +26,22 @@ const router = createBrowserRouter([
   {
     path: "/store",
     element: <StorePage />,
+  },
+  {
+    path: "/websocket-test/real-time-quiz",
+    element: <WebSocketTestPage />,
+  },
+  {
+    path: "/quest",
+    element: <QuestStartPage />,
+  },
+  {
+    path: "/websocket-test/acidrain/:logId?",
+    element: (
+      <AuthGuardLayout>
+        <AcidPage />
+      </AuthGuardLayout>
+    ),
   },
 ]);
 

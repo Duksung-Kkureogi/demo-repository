@@ -1,7 +1,8 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
 const instance = axios.create({
-  baseURL: "http://duzzle-development-env.eba-n6vfrcj2.ap-northeast-2.elasticbeanstalk.com",
+  baseURL: "http://localhost:8000",
+  // baseURL:'http://209.97.173.226/'
 });
 
 type HTTPRequestConfig = AxiosRequestConfig;
@@ -26,4 +27,9 @@ const api = (axios: AxiosInstance) => {
   };
 };
 
-export const Http = api(instance);
+export const http = api(instance);
+
+export type ApiResponseType<T> = {
+  result: boolean;
+  data: T;
+};

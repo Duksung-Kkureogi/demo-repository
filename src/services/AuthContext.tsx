@@ -3,11 +3,11 @@ import { EthereumPrivateKeyProvider } from "@web3auth/ethereum-provider";
 import { Web3Auth, Web3AuthOptions } from "@web3auth/modal";
 import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
 import React, { createContext, useState, useContext, ReactNode } from "react";
-import { Http } from "./Http";
 import RPC from "../../ethersRPC";
 import { LoginRequest } from "../Data/DTOs/UserDTO";
 import { UiConsole } from "../Presentation/UI/Components/UIConsole";
 import { Web3AuthParameters } from "../constant/blockchain";
+import { http } from "./Http";
 
 interface DuzzleUser {
   accessToken: string;
@@ -64,7 +64,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const web3AuthOptions: Web3AuthOptions = {
     clientId,
-    web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_MAINNET,
+    web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_DEVNET,
     privateKeyProvider: privateKeyProvider,
     sessionTime: 86400, // 1 day
   };
@@ -106,7 +106,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const response: any = (
-        await Http.post(
+        await http.post(
           "/v1/auth",
           {
             loginType: params.loginType,
