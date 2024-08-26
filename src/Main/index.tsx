@@ -11,6 +11,7 @@ import WebSocketTestPage from "../Presentation/UI/Pages/WebSocketTestPage";
 import AcidPage from "../Presentation/UI/Pages/AcidPage";
 import AuthGuardLayout from "../Presentation/UI/Components/AuthGuard";
 import QuestStartPage from "../Presentation/UI/Pages/QuestStartPage";
+import ThreeDModelPage from "../Presentation/UI/Pages/ThreeDModelPage";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/quest",
     element: <QuestStartPage />,
+  },
+  {
+    path: "/3d-model",
+    element: <ThreeDModelPage />,
   },
   {
     path: "/websocket-test/acidrain/:logId?",

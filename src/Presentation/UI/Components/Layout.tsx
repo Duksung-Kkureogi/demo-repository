@@ -26,6 +26,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
               웹소켓 테스트-실시간 퀴즈
             </Link>
           </li>
+          <li>
+            <Link to="/3d-model">3D 모델 페이지로 이동</Link>
+          </li>
           {/* <li>
             <Link to="/websocket-test/acidrain">웹소켓 테스트-산성비</Link>
           </li> */}
