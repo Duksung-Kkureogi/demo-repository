@@ -12,6 +12,7 @@ import AcidPage from "../Presentation/UI/Pages/AcidPage";
 import AuthGuardLayout from "../Presentation/UI/Components/AuthGuard";
 import QuestStartPage from "../Presentation/UI/Pages/QuestStartPage";
 import ThreeDModelPage from "../Presentation/UI/Pages/ThreeDModelPage";
+import ThreeDModelTestPage from "../Presentation/UI/Pages/App";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         <AcidPage />
       </AuthGuardLayout>
     ),
+  },
+  {
+    path: "3d-model-test",
+    element: <ThreeDModelTestPage />,
   },
 ]);
 
